@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { AnyAction, Reducer } from "redux";
-import { ApiCallState } from "../reduxios";
+import { ApiCallState } from "./reduxios";
 import { ApiActions } from "./shared";
 
 type State<Data, ErrorType> = {

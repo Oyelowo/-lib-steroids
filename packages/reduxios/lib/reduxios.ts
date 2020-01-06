@@ -1,7 +1,7 @@
-import createReducerFactory from "./utils/createReducerFactory";
-import createUseDeleteResourceHook from "./utils/createUseDeleteResourceHook";
-import createUseResourceHook from "./utils/createUseResourceHook";
-import { getApiActions } from "./utils/shared";
+import createReducerFactory from "./createReducerFactory";
+import createUseDeleteResourceHook from "./createUseDeleteResourceHook";
+import createUseResourceHook from "./createUseResourceHook";
+import { getApiActions } from "./shared";
 
 export type ApiCallState = "idle" | "attempt" | "success" | "failure";
 
@@ -67,7 +67,11 @@ export type ApiCallState = "idle" | "attempt" | "success" | "failure";
   ```
 */
 
-export const reduxios = <Data, ErrorInfo = unknown, ActionType extends string = string>(
+export const reduxios = <
+  Data,
+  ErrorInfo = unknown,
+  ActionType extends string = string
+>(
   type: ActionType
 ) => {
   const actionType = getApiActions(type);
