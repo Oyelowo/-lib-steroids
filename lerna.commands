@@ -1,0 +1,3 @@
+npx lerna clean -y && npx lerna bootstrap --hoist
+
+npx lerna add -D <package> 
