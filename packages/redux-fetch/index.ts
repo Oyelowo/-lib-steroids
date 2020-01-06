@@ -67,13 +67,13 @@ export type ApiCallState = 'idle' | 'attempt' | 'success' | 'failure'
   ```
 */
 
-const reduxApiCallHelper = <ActionType extends string>(type: ActionType) => {
+const reduxApiCallHelper = <Data, ErrorType, ActionType extends string>(type: ActionType) => {
   const actionType = getApiActions(type)
 
   return {
     useResource: createUseResourceHook(actionType),
     useDeleteResource: createUseDeleteResourceHook(actionType),
-    createReducer: createReducerFactory(actionType),
+    createReducer: createReducerFactory<Data, ErrorType>(actionType),
   }
 }
 

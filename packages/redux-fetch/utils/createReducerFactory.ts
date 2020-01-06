@@ -3,7 +3,7 @@ import { AnyAction, Reducer } from "redux";
 import { ApiCallState } from "../index";
 import { ApiActions } from "./shared";
 
-type State<Data, ErrorType = any> = {
+type State<Data, ErrorType = unknown> = {
   fetchState: ApiCallState;
   data: Data | undefined;
   axiosError: AxiosError<ErrorType> | null;
@@ -16,9 +16,9 @@ export interface CustomReduxActions<TData, ErrorInfo> extends AnyAction {
   };
 }
 
-type CRF = (
+type CRF = <Data, ErrorInfo>(
   apiActions: ApiActions
-) => <Data, ErrorInfo>(
+) => (
   initialState?: State<Data>
 ) => Reducer<State<Data>, CustomReduxActions<Data, ErrorInfo>>;
 
