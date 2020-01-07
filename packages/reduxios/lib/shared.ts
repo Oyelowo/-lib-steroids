@@ -2,7 +2,7 @@ export const getApiActions = (type: string) => ({
   request: `${type}_REQUEST`,
   success: `${type}_SUCCESS`,
   failure: `${type}_FAILURE`,
-  clearData: `${type}_DELETE`,
+  resetState: `${type}_RESET`,
 })
 
 export type ApiActions = ReturnType<typeof getApiActions>

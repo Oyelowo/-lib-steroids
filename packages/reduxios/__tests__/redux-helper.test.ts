@@ -75,7 +75,7 @@ describe("CreateReducer helper method", () => {
 
   test("should return no data and revert fetchState to idle when deleted", () => {
     const stateWhenDataDeleted = userReducer(undefined, {
-      type: apiAction.clearData
+      type: apiAction.resetState
     });
 
     expect(stateWhenDataDeleted).toStrictEqual({
