@@ -1,8 +1,9 @@
 # `reduxios`
 
+**Utility function for handling reducers and actions related  to data fetching**
 
+***This library can reduce redux logic related to data fetching by up to 80%***
 
-***Utility function for handling reducers and actions related  to data fetching***
 
 ## Example Usage 
  * 1. First, you call the function with the action type name,
