@@ -32,7 +32,10 @@
     "url": "git+https://github.com/Oyelowo/lib-steroids.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "yarn clean && yarn compile",
+    "compile": "tsc",
+    "clean": "rm -rf ./lib",
+    "prepublishOnly": "yarn build",
     "prepare": "yarn test && yarn build",
     "test": "jest",
     "test:dev": "jest --runInBand --watchAll"
