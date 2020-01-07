@@ -1,7 +1,7 @@
-import createReducerFactory from "./createReducerFactory";
-import createUseResetStateHook from "./createUseResetHook";
-import createUseResourceHook from "./createUseResourceHook";
-import { getApiActions } from "./shared";
+import createReducerFactory from "./utils/createReducerFactory";
+import createUseResetStateHook from "./utils/createUseResetHook";
+import createUseResourceHook from "./utils/createUseResourceHook";
+import { getApiActions } from "./utils/shared";
 
 export type ApiCallState = "idle" | "attempt" | "success" | "failure";
 
