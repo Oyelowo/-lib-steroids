@@ -1,6 +1,6 @@
 {
   "name": "@lib-steroids/reduxios",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Helps to handle logic related to api calls ",
   "keywords": [
     "redux",
