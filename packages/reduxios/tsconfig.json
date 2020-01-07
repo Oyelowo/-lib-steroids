@@ -3,5 +3,10 @@
   "compilerOptions": {
     "outDir": "./lib",
     "declarationDir": "./lib"
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "__tests__"
+  ]
 }
