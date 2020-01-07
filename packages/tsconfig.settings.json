@@ -6,6 +6,10 @@
     "declarationMap": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "jsx": "react"
-  }
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "lib": ["ES2017", "ES7", "ES2018", "ES2020", "DOM"]
+  },
+  "exclude": ["node_modules", "lib"]
 }

@@ -17,19 +17,23 @@
   "author": "oyelowo <oyelowo.oyedayo@gmail.com>",
   "homepage": "https://github.com/Oyelowo/lib-steroids#readme",
   "license": "MIT",
-  "main": "lib/reduxios.ts",
+  "main": "./lib/reduxios.js",
+  "types": "./lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    ""
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Oyelowo/lib-steroids.git"
   },
   "scripts": {
+    "build": "tsc",
+    "prepare": "yarn test && yarn build",
     "test": "jest",
     "test:dev": "jest --runInBand --watchAll"
   },

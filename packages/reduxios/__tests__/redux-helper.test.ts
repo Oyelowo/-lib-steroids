@@ -1,6 +1,6 @@
 import "jest";
-import { reduxios } from "../lib";
-import { getApiActions } from "../lib/utils/shared";
+import { reduxios } from "../src";
+import { getApiActions } from "../src/utils/shared";
 
 const actionBaseName = "FETCH_USER";
 const apiAction = getApiActions(actionBaseName);
