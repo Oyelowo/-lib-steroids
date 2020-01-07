@@ -20,12 +20,12 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "directories": {
+    "src": "src",
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib",
-    ""
+    "lib"
   ],
   "repository": {
     "type": "git",
