@@ -1,7 +1,6 @@
 import "jest";
-import { reduxios } from "../lib/reduxios";
-import { getApiActions } from "../lib/shared";
-
+import { reduxios } from "../libs/reduxios";
+import { getApiActions } from "../libs/shared";
 
 const actionBaseName = "FETCH_USER";
 const apiAction = getApiActions(actionBaseName);
@@ -19,7 +18,8 @@ describe("CreateReducer helper method", () => {
     const initialState = userReducer(undefined, {} as any);
     expect(initialState).toStrictEqual({
       data: undefined,
-      fetchState: "idle"
+      fetchState: "idle",
+      axiosErrorResponse: null
     });
   });
 
@@ -27,13 +27,14 @@ describe("CreateReducer helper method", () => {
     const initialState = userReducer(undefined, { type: apiAction.request });
     expect(initialState).toStrictEqual({
       data: undefined,
-      fetchState: "attempt"
+      fetchState: "attempt",
+      axiosErrorResponse: null
     });
   });
 
   test("should return payload data when success", () => {
     const fakeData = {
-      userName: "Sonja",
+      userName: "Oyelowo Oyedayo",
       userId: 2
     };
 
@@ -46,7 +47,8 @@ describe("CreateReducer helper method", () => {
 
     expect(stateWhenApiCallSucceeds).toStrictEqual({
       data: fakeData,
-      fetchState: "success"
+      fetchState: "success",
+      axiosErrorResponse: null
     });
   });
 
@@ -54,7 +56,7 @@ describe("CreateReducer helper method", () => {
     const stateWhenApiCallFails = userReducer(undefined, {
       type: apiAction.failure,
       payload: {
-        axiosError: {
+        axiosErrorResponse: {
           response: {
             data: "fake error"
           }
@@ -65,7 +67,7 @@ describe("CreateReducer helper method", () => {
     expect(stateWhenApiCallFails).toStrictEqual({
       data: undefined,
       fetchState: "failure",
-      axiosError: {
+      axiosErrorResponse: {
         response: {
           data: "fake error"
         }
@@ -80,7 +82,8 @@ describe("CreateReducer helper method", () => {
 
     expect(stateWhenDataDeleted).toStrictEqual({
       data: undefined,
-      fetchState: "idle"
+      fetchState: "idle",
+      axiosErrorResponse: null
     });
   });
 });

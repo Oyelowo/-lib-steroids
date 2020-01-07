@@ -1,7 +1,9 @@
+const base = require("../../jest.config.base.js");
+const pack = require("./package");
+
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "jsdom",
-  modulePathIgnorePatterns: ["cypress"],
-  watchPathIgnorePatterns: ["/node_modules/"],
-  moduleFileExtensions: ["ts", "tsx", "js", "json", "jsx", "node"]
+  ...base,
+  displayName: pack.name,
+  name: pack.name,
+  //rootDir: "../..",
 };
