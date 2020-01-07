@@ -11,6 +11,9 @@
     "rest",
     "api"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "oyelowo <oyelowo.oyedayo@gmail.com>",
   "homepage": "https://github.com/Oyelowo/lib-steroids#readme",
   "license": "MIT",
@@ -48,5 +51,6 @@
   },
   "peerDependencies": {
     "react": "^16.12.0"
-  }
+  },
+  "gitHead": "5f20c6174ca8c17e205bee330db9011798782e43"
 }
