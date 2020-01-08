@@ -17,8 +17,8 @@
   "author": "oyelowo <oyelowo.oyedayo@gmail.com>",
   "homepage": "https://github.com/Oyelowo/lib-steroids/tree/master/packages/reduxios-only#readme",
   "license": "MIT",
-  "main": "./lib/reduxios.js",
-  "types": "./lib/reduxios.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "directories": {
     "src": "src",
     "lib": "lib",

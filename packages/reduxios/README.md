@@ -15,10 +15,10 @@ export const booksStoreReduxios = reduxios<Book[]>("FETCH_BOOKS");
 ```
 
 -  **Create the Reducer, which will handle various Fetch states.
-    You can also pass in the default data as an argument**
+    It takes the initial data as an argument**
 
 ```ts
-export const booksReducer = booksStoreReduxios.createReducer();
+export const booksReducer = booksStoreReduxios.createReducer([]);
 ```
 
 -  **Makes the action hook for Fetching your data or calling the API.**
@@ -105,10 +105,10 @@ interface AxiosErrorResponseData {
 
 ```ts
 /*
-create reducer also takes an argument(initialData). If not specified, it defaults to  undefined
-@returns { Reducer } the reducer for that data
+create reducer handles various Fetch states.
+It takes the initial data as an argument
 */
-export const booksReducer = booksStoreReduxios.createReducer();
+export const booksReducer = booksStoreReduxios.createReducer([]);
 ```
 
 -  **Makes the api call.**
@@ -133,7 +133,7 @@ export const useResourceBooks = () => {
 ```tsx
 const BooksList: FC = () => {
   const getBooks = useResourceBooks();
-  const { data, fetchState, axiosErrorResponse } = useSelector(
+  const { data : markets, fetchState, axiosErrorResponse } = useSelector(
     (state: RootState) => state.books
   );
   /* Where:
@@ -150,7 +150,7 @@ const BooksList: FC = () => {
     <div>
       <h1>My Book List</h1>
       <ul>
-        {data.map(book => (
+        {markets.map(book => (
           <Book key={book.id} book={book} />
         ))}
       </ul>
