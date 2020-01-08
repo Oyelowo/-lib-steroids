@@ -15,10 +15,10 @@
     "access": "public"
   },
   "author": "oyelowo <oyelowo.oyedayo@gmail.com>",
-  "homepage": "https://github.com/Oyelowo/lib-steroids#readme",
+  "homepage": "https://github.com/Oyelowo/lib-steroids/tree/master/packages/reduxios-only#readme",
   "license": "MIT",
   "main": "./lib/reduxios.js",
-  "types": "./lib/index.d.ts",
+  "types": "./lib/reduxios.d.ts",
   "directories": {
     "src": "src",
     "lib": "lib",
