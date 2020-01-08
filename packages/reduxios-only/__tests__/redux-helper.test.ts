@@ -1,5 +1,5 @@
 import "jest";
-import reduxios from "../src";
+import reduxios from "../src/reduxios";
 import { getApiActions } from "../src/utils/shared";
 
 const actionBaseName = "FETCH_USER";

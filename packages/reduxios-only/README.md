@@ -9,7 +9,7 @@
 - **Generate the helper with the basename for action types**
 
 ```ts
-import { reduxios } from "@lib-steroids/reduxios";
+import reduxios from "reduxios";
 
 export const booksStoreReduxios = reduxios<Book[]>("FETCH_BOOKS");
 ```

@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios'
 import { AnyAction, Reducer } from 'redux'
-import { FetchState } from '../../src'
+import { FetchState } from '../reduxios'
 import { ApiActions } from './shared'
 
 type State<Data, ErrorInfo> = {
