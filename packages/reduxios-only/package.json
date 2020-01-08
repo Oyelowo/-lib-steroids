@@ -1,0 +1,63 @@
+{
+  "name": "reduxios",
+  "version": "0.0.0",
+  "description": "Reduces data fetching redux logic by up to 80%",
+  "keywords": [
+    "redux",
+    "async",
+    "api",
+    "crud",
+    "operation",
+    "rest",
+    "api"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "oyelowo <oyelowo.oyedayo@gmail.com>",
+  "homepage": "https://github.com/Oyelowo/lib-steroids#readme",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "src": "src",
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oyelowo/lib-steroids.git"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "compile": "tsc",
+    "clean": "rm -rf ./lib",
+    "prepublishOnly": "yarn build",
+    "prepare": "yarn test && yarn build",
+    "test": "jest",
+    "test:dev": "jest --runInBand --watchAll"
+  },
+  "bugs": {
+    "url": "https://github.com/Oyelowo/lib-steroids/issues"
+  },
+  "dependencies": {
+    "react-redux": "^7.1.3"
+  },
+  "devDependencies": {
+    "@types/react-redux": "^7.1.5",
+    "@types/redux": "^3.6.0",
+    "axios": "^0.19.1",
+    "jest": "^24.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0"
+  },
+  "gitHead": "5f20c6174ca8c17e205bee330db9011798782e43"
+}
