@@ -3,7 +3,7 @@ import createUseResetStateHook from "./utils/createUseResetHook";
 import createUseResourceHook from "./utils/createUseResourceHook";
 import { getApiActions } from "./utils/shared";
 
-export type ApiCallState = "idle" | "attempt" | "success" | "failure";
+export type FetchState = "idle" | "attempt" | "success" | "failure";
 
 /**
  *  Utility function for handling reducers and actions related

@@ -1,10 +1,10 @@
 import { AxiosResponse } from 'axios'
 import { AnyAction, Reducer } from 'redux'
-import { ApiCallState } from '..'
+import { FetchState } from '..'
 import { ApiActions } from './shared'
 
 type State<Data, ErrorInfo> = {
-  fetchState: ApiCallState
+  fetchState: FetchState
   data: Data | undefined
   axiosErrorResponse: AxiosResponse<ErrorInfo> | null
 }
