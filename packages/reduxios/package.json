@@ -1,6 +1,6 @@
 {
   "name": "@lib-steroids/reduxios",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Reduces data fetching redux logic by up to 80%",
   "keywords": [
     "redux",
