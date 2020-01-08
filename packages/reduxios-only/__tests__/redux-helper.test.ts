@@ -1,5 +1,5 @@
 import "jest";
-import reduxios from "../src/reduxios";
+import { reduxios } from "../../reduxios/src";
 import { getApiActions } from "../src/utils/shared";
 
 const actionBaseName = "FETCH_USER";
@@ -11,8 +11,8 @@ interface FakeUser {
 }
 
 describe("CreateReducer helper method", () => {
-  const userStoreHelper = reduxios<FakeUser>(actionBaseName);
-  const userReducer = userStoreHelper.createReducer();
+  const userStoreHelper = reduxios<FakeUser | undefined>(actionBaseName);
+  const userReducer = userStoreHelper.createReducer(undefined);
 
   test("should return undefined data when idle", () => {
     const initialState = userReducer(undefined, {} as any);
