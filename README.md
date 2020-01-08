@@ -11,7 +11,7 @@
 ```ts
 import { reduxios } from "@lib-steroids/reduxios";
 
-export const booksStoreReduxios = reduxios<Book[], AxiosErrorResponseData>("FETCH_BOOKS");
+export const booksStoreReduxios = reduxios<Book[]>("FETCH_BOOKS");
 ```
 
 -  **Create the Reducer, which will handle various Fetch states.
