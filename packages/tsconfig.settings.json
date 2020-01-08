@@ -9,6 +9,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "strict": true,
     "lib": ["ES2017", "ES7", "ES2018", "ES2020", "DOM"]
   },
   "exclude": ["node_modules", "lib"]
