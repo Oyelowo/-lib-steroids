@@ -6,22 +6,22 @@
 
 ## Example Usage in 4 simple steps
 
-1. **Generate the helper with the basename for action types**
+- **Generate the helper with the basename for action types**
 
 ```ts
-export const booksStoreReduxios = reduxios<Book[], AxiosErrorResponseData>(
-  "FETCH_BOOKS"
-);
+import { reduxios } from "@lib-steroids/reduxios";
+
+export const booksStoreReduxios = reduxios<Book[], AxiosErrorResponseData>("FETCH_BOOKS");
 ```
 
-1.  **Create the Reducer, which will handle various Fetch states. 
-      You can also pass in the default data as an argument**
+-  **Create the Reducer, which will handle various Fetch states.
+    You can also pass in the default data as an argument**
 
 ```ts
 export const booksReducer = booksStoreReduxios.createReducer();
 ```
 
-3.  **Makes the action hook for Fetching your data or calling the API.**
+-  **Makes the action hook for Fetching your data or calling the API.**
 
 ```ts
 import axios from "axios";
@@ -35,7 +35,7 @@ export const useResourceBooks = () => {
 };
 ```
 
-4. **Use the action hook and state in your component. No need to dispatch the action.**
+- **Use the action hook and state in your component. No need to dispatch the action.**
 
 ```tsx
 const BooksList: FC = () => {
@@ -61,12 +61,11 @@ const BooksList: FC = () => {
 };
 ```
 
-***That's it! No need to manually write out action creators, type declarations, reducers and data fetching attempt/success/failure/reset handling. You get everything out of the box***
-
+**That's it! No need to manually write out action creators, type declarations, reducers and data fetching attempt/success/failure/reset handling. You get everything out of the box!**
 
 ## Want More Detailed Explanation?
 
-1. **First, you call the function with the action type name,**
+- **First, you call the function with the action type name,**
 
 ````ts
 /*   
@@ -92,18 +91,17 @@ export const booksStoreReduxios = reduxios<Book[], AxiosErrorResponseData>(
 
 //where Book and AxiosErrorResponseData could be e.g:
 interface Book {
-  id: string,
-  title: string,
-  author: string
+  id: string;
+  title: string;
+  author: string;
 }
 
 interface AxiosErrorResponseData {
-  message: string
+  message: string;
 }
 ````
 
-
-2. **This helper can then be used to create the reducer that handles the request, success and failure states of the data.**
+- **This helper can then be used to create the reducer that handles the request, success and failure states of the data.**
 
 ```ts
 /*
@@ -113,8 +111,7 @@ create reducer also takes an argument(initialData). If not specified, it default
 export const booksReducer = booksStoreReduxios.createReducer();
 ```
 
-
-3.  **Makes the api call.**
+-  **Makes the api call.**
 
 ```ts
 /* useResource takes argument of all axios configurations and also axiosInstance(can also be the defualt axios).
@@ -131,8 +128,7 @@ export const useResourceBooks = () => {
 };
 ```
 
- 
-4. **This can then be used in a component like this**
+- **This can then be used in a component like this**
 
 ```tsx
 const BooksList: FC = () => {
