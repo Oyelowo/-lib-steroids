@@ -17,15 +17,16 @@ export type FetchState = "idle" | "attempt" | "success" | "failure";
  * so, in this case, AxiosErrorResponseData would be: `{message: string}`. This can then be accessed later via
  * axiosError object, that is: ```axiosErrorResponse.data``` (which is derived from the catch block error.response.data )
   ```ts
-   export const booksStoreApiHelper = reduxApiCallHelper<Book[], AxiosErrorResponseData>('FETCH_BOOKS')
+   import reduxios from 'reduxios'
+   export const booksStoreApiHelper = reduxios<Book[], AxiosErrorResponseData>('FETCH_BOOKS')
    ```
 
  * 2. This helper can then be used to create the reducer that handles
  * the request, success and failure states of the data.
- * @param { any } initialData - initialData as argument if you don't want it to be undefined
+ * @param {  Book[] } initialData - initialData or default data
  * @returns { Reducer } the reducer for that data
-  ```ts
-    export const booksReducer = booksStoreApiHelper.createReducer()
+  ```ts   
+    export const booksReducer = booksStoreApiHelper.createReducer([])
   ```
   * 3.  Makes the api call.
      * @param {AxiosConfigWithInstance} axiosConfigWithInstance - all axios Configurations and also axiosInstance(can also be the defualt axios)
@@ -49,7 +50,7 @@ export type FetchState = "idle" | "attempt" | "success" | "failure";
     ```tsx
       const BooksList: FC = () => {
         const getBooks = useResourceBooks()
-        const { books, fetchState, axiosErrorResponse } = useBooksStore()
+        const { data : books , fetchState, axiosErrorResponse } = useSelector((state: RootState)=> state.books)
 
         useEffect(()=>{
           getBooks()
@@ -90,7 +91,7 @@ const reduxios = <
     /**
      *This helper can then be used to create the reducer that handles
      * the request, success and failure states of the data.
-     * @param { any } initialData - pass initialData as argument if you don't want it to be undefined
+     * @param { any } initialData -  initialData or the defaultData
      */
     createReducer: createReducerFactory<ApiData, AxiosErrorResponseData>(
       actionTypes
