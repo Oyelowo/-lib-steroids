@@ -1,6 +1,6 @@
 {
   "name": "reduxios",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "Reduces data fetching redux logic by up to 80%",
   "keywords": [
     "redux",
