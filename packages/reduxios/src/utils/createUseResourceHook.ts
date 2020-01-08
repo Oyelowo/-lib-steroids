@@ -20,10 +20,10 @@ const callApi = (
   config: AxiosConfigWithInstance
 ) => async () => {
   dispatch({ type: apiActions.request });
-
+  const { axiosInstance, ...axiosConfig } = config;
   try {
-    const resp: AxiosResponse = await config.axiosInstance({
-      ...config
+    const resp: AxiosResponse = await axiosInstance({
+      ...axiosConfig
     });
 
     dispatch({
