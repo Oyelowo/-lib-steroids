@@ -4,6 +4,7 @@
     "outDir": "./lib",
     "declarationDir": "./lib",
     "sourceMap": false,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules",
