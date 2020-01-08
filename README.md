@@ -14,7 +14,6 @@ export const booksStoreReduxios = reduxios<Book[], AxiosErrorResponseData>(
 );
 ```
 
-<br>
 
 2.  **Create the Reducer, which will handle various Fetch states. 
       You can also pass in the default data as an argument**
@@ -23,7 +22,6 @@ export const booksStoreReduxios = reduxios<Book[], AxiosErrorResponseData>(
 export const booksReducer = booksStoreReduxios.createReducer();
 ```
 
-<br>
 
 3.  **Makes the action hook for Fetching your data or calling the API.**
 
@@ -39,7 +37,6 @@ export const useResourceBooks = () => {
 };
 ```
 
-<br>
 
 4. **Use the action hook and state in your component. No need to dispatch the action.**
 
@@ -67,14 +64,13 @@ const BooksList: FC = () => {
 };
 ```
 
+***That's it! No need to manually write out action creators, type declarations, reducers and data fetching attempt/success/failure/reset handling. You get everything out of the box***
 
 
-<br>
-<br>
 
 ## Want More Detailed Explanation?
 
-1. First, you call the function with the action type name,
+1. **First, you call the function with the action type name,**
 
 ````ts
 /*   
@@ -110,9 +106,9 @@ interface AxiosErrorResponseData {
 }
 ````
 
- <br>
 
-2. This helper can then be used to create the reducer that handles the request, success and failure states of the data.
+
+2. **This helper can then be used to create the reducer that handles the request, success and failure states of the data.**
 
 ```ts
 /*
@@ -122,9 +118,9 @@ create reducer also takes an argument(initialData). If not specified, it default
 export const booksReducer = booksStoreReduxios.createReducer();
 ```
 
- <br>
 
-3.  Makes the api call.
+
+3.  **Makes the api call.**
 
 ```ts
 /* useResource takes argument of all axios configurations and also axiosInstance(can also be the defualt axios).
@@ -141,9 +137,9 @@ export const useResourceBooks = () => {
 };
 ```
 
- <br>
+
  
-4. This can then be used in a component like this
+1. **This can then be used in a component like this**
 
 ```tsx
 const BooksList: FC = () => {
