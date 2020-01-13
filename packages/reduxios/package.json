@@ -38,7 +38,7 @@
     "prepublishOnly": "yarn build",
     "prepare": "yarn test && yarn build",
     "test": "jest",
-    "test:dev": "jest --runInBand --watchAll"
+    "test:dev": "jest --runInBand --watchAll --coverage"
   },
   "bugs": {
     "url": "https://github.com/Oyelowo/lib-steroids/issues"

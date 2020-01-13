@@ -11,14 +11,14 @@
 ```ts
 import { reduxios } from "@lib-steroids/reduxios";
 
-export const booksStoreReduxios = reduxios<Book[]>("FETCH_BOOKS");
+export const booksStoreFetcher = reduxios<Book[]>("FETCH_BOOKS");
 ```
 
 -  **Create the Reducer, which will handle various Fetch states.
     It takes the initial data as an argument**
 
 ```ts
-export const booksReducer = booksStoreReduxios.createReducer([]);
+export const booksReducer = booksStoreFetcher.createReducer([]);
 ```
 
 -  **Makes the action hook for Fetching your data or calling the API.**
@@ -26,8 +26,8 @@ export const booksReducer = booksStoreReduxios.createReducer([]);
 ```ts
 import axios from "axios";
 
-export const useResourceBooks = () => {
-  return booksStoreReduxios.useResource({
+export const useFetchBooks = () => {
+  return booksStoreFetcher.useResource({
     axiosInstance: axios, // This can also be an axios instance created
     method: "get",
     url: "/books"
@@ -39,7 +39,7 @@ export const useResourceBooks = () => {
 
 ```tsx
 const BooksList: FC = () => {
-  const getBooks = useResourceBooks();
+  const getBooks = useFetchBooks();
   const { data, fetchState, axiosErrorResponse } = useSelector(
     (state: RootState) => state.books
   );
@@ -63,6 +63,8 @@ const BooksList: FC = () => {
 
 **That's it! No need to manually write out action creators, type declarations, reducers and data fetching attempt/success/failure/reset handling. You get everything out of the box!**
 
+
+
 ## Want More Detailed Explanation?
 
 - **First, you call the function with the action type name,**
@@ -85,7 +87,7 @@ AxiosErrorResponseData(optional) -  is the Error info sent from the
  
 Returns {object} { useResource, createReducer, useResetState }  
   */
-export const booksStoreReduxios = reduxios<Book[], AxiosErrorResponseData>(
+export const booksStoreFetcher = reduxios<Book[], AxiosErrorResponseData>(
   "FETCH_BOOKS"
 );
 
@@ -108,7 +110,7 @@ interface AxiosErrorResponseData {
 create reducer handles various Fetch states.
 It takes the initial data as an argument
 */
-export const booksReducer = booksStoreReduxios.createReducer([]);
+export const booksReducer = booksStoreFetcher.createReducer([]);
 ```
 
 -  **Makes the api call.**
@@ -119,8 +121,8 @@ export const booksReducer = booksStoreReduxios.createReducer([]);
     */
 import axios from "axios";
 
-export const useResourceBooks = () => {
-  return booksStoreReduxios.useResource({
+export const useFetchBooks = () => {
+  return booksStoreFetcher.useResource({
     axiosInstance: axios, // This can also be an axios instance created
     method: "get",
     url: "/books"
@@ -132,7 +134,7 @@ export const useResourceBooks = () => {
 
 ```tsx
 const BooksList: FC = () => {
-  const getBooks = useResourceBooks();
+  const getBooks = useFetchBooks();
   const { data : markets, fetchState, axiosErrorResponse } = useSelector(
     (state: RootState) => state.books
   );
