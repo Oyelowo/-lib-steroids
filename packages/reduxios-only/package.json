@@ -49,7 +49,7 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.5",
     "@types/redux": "^3.6.0",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "jest": "^24.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
